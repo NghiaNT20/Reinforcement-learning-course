@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """Glues together an experiment, agent, and environment.
+   RLGlue là lớp điều phối giữa agent và môi trường.
 """
 
 from __future__ import print_function
@@ -40,7 +41,7 @@ class RLGlue:
         """
         
         self.total_reward = 0.0
-        self.num_steps = 1
+        self.num_steps = 1 #num_steps bắt đầu từ 1, vì ngay khi agent chọn hành động đầu tiên, ta đã tính một bước di chuyển.
 
         last_state = self.environment.env_start()
         self.last_action = self.agent.agent_start(last_state)
